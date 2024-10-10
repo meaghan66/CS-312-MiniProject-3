@@ -1,0 +1,91 @@
+/* styling for cs 312 blog website */
+
+body {
+    font-family: 'Arial', monospace;
+    margin: 0;
+    padding: 40px;
+    background-color: #8458B3;
+    color: #e5eaf5;
+    font-size: 16px;
+    text-align: left;
+}
+
+h1 {
+    color: #44167c;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 0;
+}
+
+h2 {
+    color: #e5eaf5;
+    text-align: center;
+}
+
+h3 {
+    font-style: italic;
+    color: #c0c4cc;
+    text-align: left;
+}
+
+.title {
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    padding: 20px; 
+    margin: 15px 10;
+    font-size: 50px;
+}
+
+form {
+    margin: 20px 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #a0d2eb;
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #494D5F;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e5eaf5;
+    color: #494D5F;
+}
+
+.deleteButton {
+    padding: 10px 20px;
+    background-color: #494D5F;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.deleteButton:hover {
+    background-color: #e93c4d;
+    color: white;
+}
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogChamp 2.0</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body> 
+    <h1 class="title">Edit Blog Post</h1>
+    <!-- get the input just like creating a post to edit it -->
+    <form action="/editPost/<%=post.index%>" method="POST">
+        <input type="text" name="postTitle" value="<%= post.postTitle %>" required>
+        <input type="text" name="postAuthor" value="<%= post.postAuthor %>" required>
+        <textarea name="postContent" required><%= post.postContent %></textarea>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
