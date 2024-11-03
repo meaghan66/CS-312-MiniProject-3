@@ -13,36 +13,34 @@
     <!-- setup for creating a new post -->
     <h2>Create a New Post</h2>
     <form action="/createPost" method="POST">
-        <!-- get the title, author, and the text content -->
+        <!-- get the title and the text content -->
         <input type="text" name="postTitle" placeholder="Title: " required>
-        <input type="text" name="postAuthor" placeholder="Author Name: " required>
         <textarea name="postContent" placeholder="Write your post: " required></textarea>
         <button type="submit">Submit</button>
     </form>
 
     <hr>
 
-    <!-- display all of the created posts on the main page -->
+<!-- display all of the created posts on the main page -->
 
-    <!-- if there are multiple posts -->
-    <% if (existingPosts.length > 0) { %>
-        <!-- for each post (display by the newest at the top) -->
-        <% existingPosts.slice().reverse().forEach(post => { %>
+<!-- if there are multiple posts -->
+    <% if (blogs.length > 0) { %>
+        <% blogs.forEach(post => { %>
             <div>
-                <!-- display the title, author, and text content -->
-                <h2 style="display:inline;"><%= post.postTitle %> </h2>
-                <h3 style="display:inline;">@<%= post.postAuthor %></h3>
-                <p style="font-size: 20px;"><%= post.postContent %></p>
-                <p><%= post.date %></p>
-
-                <!-- each post contains an edit button and a delete button -->
-                <form action="/editPost/<%= post.index %>" method="GET" style="display:inline;">
-                    <button type="submit">Edit</button>
-                </form>
-                <form action="/deletePost" method="POST" style="display:inline;">
-                    <input type="hidden" name="index" value="<%= post.index %>">
-                    <button class="deleteButton" type="submit">Delete</button>
-                </form>
+                <h2 style="display:inline;"><%= post.title %> </h2>
+                <h3 style="display:inline;">@<%= post.creator_name %></h3>
+                <p style="font-size: 20px;"><%= post.body %></p>
+                <p><%= post.date_created %></p>
+                
+                <% if (currentUser && currentUser.user_id === post.creator_user_id) { %>
+                    <form action="/editPost/<%= post.blog_id %>" method="GET" style="display:inline;">
+                        <button type="submit">Edit</button>
+                    </form>
+                    <form action="/deletePost" method="POST" style="display:inline;">
+                        <input type="hidden" name="id" value="<%= post.blog_id %>">
+                        <button class="deleteButton" type="submit">Delete</button>
+                    </form>
+                <% } %>
             </div>
             <hr>
         <% }) %>
